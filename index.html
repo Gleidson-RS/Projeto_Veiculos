@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Veiculo</title>
+    <title>Projeto veiculo</title>
 
     
     <script src="js/scripts_pessoas.js" defer type="module"></script>
@@ -12,14 +12,14 @@
 </head>
 <body>
     <div id="geral">
-        <h3>Cadastro De Veiculo</h3>
+        <h3>Cadastro De veiculo</h3>
 
         <div id="div-codigo">
 
 
             <hr>
             <h4>Regras</h4>
-            <p>Pessoas MENOR de Idade ou renda MENOR ou igual a R$ 1.700,00 são Isentas de desconto</p>
+            <p>Pessoas MENOR de valor ou combutivel MENOR ou igual a R$ 1.700,00 são Isentas de desconto</p>
             <p>De R$ 1.701,00 até R$ 5.000,00 - Desconto de 5%</p>
             <p>De R$ 5.001,00 até R$ 8.000,00 - Desconto de 10%</p>
             <p>De R$ 8.001,00 até R$ 12.000,00 - Desconto de 15%</p>
@@ -32,20 +32,23 @@
         <div id="div-form-veiculo">
             <form id="form-veiculo">
 
-                <label for="Modelo">Modelo</label>
-                <input type="text" name="Modelo" id="modelo">
+                <label for="modelo">Modelo</label>
+                <input type="text" name="modelo" id="modelo">
 
-                <label for="Modelo">Modelo</label>
-                <input type="text" name="Modelo" id="Modelo">
+                <label for="marca">Marca</label>
+                <input type="text" name="marca" id="marca">
 
-                <label for="Modelo">Modelo</label>
-                <input type="text" name="Modelo" id="Modelo">
+                <label for="placa">Placa</label>
+                <input type="text" name="placa" id="placa">
 
-                <label for="idade">Idade</label>
-                <input type="text" name="idade" id="idade">
+                <label for="ano">Ano</label>
+                <input type="text" name="ano" id="ano">
 
-                <label for="renda">Renda</label>
-                <input type="text" name="renda" id="renda">
+                <label for="valor">Valor</label>
+                <input type="text" name="valor" id="valor">
+
+                <label for="combutivel">Combutivel</label>
+                <input type="text" name="combutivel" id="combutivel">
 
                 <button type="submit" id="btn-add">Adicionar</button>
                 <button type="reset" id="btn-limpar">Limpar</button>
