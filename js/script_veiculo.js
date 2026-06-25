@@ -29,7 +29,15 @@ formVeiculo.addEventListener('submit', (evt) => {
         ano: dadosFormveiculo.get('ano'),
         valor: dadosFormveiculo.get('valor'),
         combustivel: dadosFormveiculo.get('combustivel'),
-    }
+
+        valor: Number(
+            dadosFormveiculo
+                .get('valor')
+                .replaceAll('.', '')
+                .replace(',', '.')
+        )
+
+    }   
 veiculo.ipva = CalculoIPVA(veiculo)
 veiculo.seguro = Number(veiculo.valor) * 0.10
 

@@ -61,21 +61,17 @@
                 <label for="valor">Valor (sem pontos ou virgulas)</label>
                 <input type="text" name="valor" id="valor">
 
-                <label for="combustivel">Combustivel (somente os tipos listados a baixo)</label>
-                <input type="text" name="combustivel" id="combustivel">
-
+                <label for="combustivel">Combustivel</label>
+                <select name="combustivel" id="combustivel">
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Etanol">Etanol</option>
+                    <option value="Bicombustível">Bicombustível</option>
+                    <option value="Híbrido">Híbrido</option>
+                    <option value="Elétrico">Elétrico</option>
+                </select>
                 
-                <hr>
-                <hr>
-                <h2>tipos De Combustíveis:</h2>
-                <li>Gasolina</li>
-                <li>Etanol</li>
-                <li>Bicombustível</li>
-                <li>Híbrido</li>
-                <li>Elétrico</li>
-                <hr>
-                <hr>
-
+                <br>
+                <br>
 
                 <button type="submit" id="btn-add">Adicionar</button>
                 <button type="reset" id="btn-limpar">Limpar</button>
