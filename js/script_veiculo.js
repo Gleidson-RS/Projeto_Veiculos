@@ -1,5 +1,5 @@
 //IMPORTANDO ARQUIVOS
-import {calculo} from "./script_calculo.js"
+import {CalculoIPVA} from "./script_calculo.js"
 
 
 
@@ -13,7 +13,8 @@ const btnLimpar = document.querySelector('#btn-limpar')
 
 //CRIANDO O ARRAY veiculo
 const veiculo = []
-
+const ipva = ''
+const seguro = ''
 
 //CAPTURAR O EVENTO submit DO FORMULÁRIO
 formVeiculo.addEventListener('submit', (evt) => {
@@ -27,8 +28,11 @@ formVeiculo.addEventListener('submit', (evt) => {
         placa: dadosFormveiculo.get('placa'),
         ano: dadosFormveiculo.get('ano'),
         valor: dadosFormveiculo.get('valor'),
-        combustivel: dadosFormveiculo.get('combustivel')
+        combustivel: dadosFormveiculo.get('combustivel'),
     }
+veiculo.ipva = CalculoIPVA(veiculo)
+veiculo.seguro = Number(veiculo.valor) * 0.10
+
 
     addveiculo(veiculo)
 })
@@ -50,10 +54,7 @@ const listveiculo = () => {
     divLista.innerHTML = ''
 
     veiculo.forEach((elem, i) => {
-        divLista.innerHTML += ` ${i + 1} - ${elem.modelo} - ${elem.marca} - ${elem.placa} ${elem.ano} ${elem.valor} ${elem.combustivel} <br>`
+        divLista.innerHTML += `${i + 1} - Modelo:${elem.modelo} - Marca:${elem.marca} - Placa:${elem.placa} - Ano:${elem.ano} - Valor:${elem.valor} - Combustivel:${elem.combustivel} - Seguro:${elem.seguro} - IPVA:${elem.ipva} <br>`
 
     })
 }
-btnLimpar.addEventListener('click', () => {
-    divLista.innerHTML = ''
-})

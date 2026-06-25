@@ -12,16 +12,33 @@
 </head>
 <body>
     <div id="geral">
+
         <h3>Cadastro De veiculo</h3>
+      
+        <hr>
+        <hr>
+        <h4>Requisitos Da Atividade</h4>
+        <p>CADASTRO DE VEÍCULOS</p>
+        <p>LISTAGEM DOS VEÍCULOS</p>
+        <p>LIMPEZA DE FORMULÁRIO</p>
+        <hr>
+
+        <hr>
+        <h4>Regras</h4>
+        <p>O seguro será fixado em 10% do
+            valor do veículo para todos os casos, enquanto o IPVA será
+            calculado de acordo com o tipo de combustível: veículos a
+            gasolina pagam 20%, etanol 15%, bicombustíveis 10%, híbridos
+            8% e elétricos 2%.</p>
+        <p>Caso o veículo tenha mais de 20 anos de
+            fabricação, ele será considerado isento de IPVA, sendo
+            exibido esse status na listagem.
+        <hr>
+        <hr>
+
 
         <div id="div-codigo">
 
-            <hr>
-            <h4>Requisitos Da Atividade</h4>
-            <p>CADASTRO DE VEÍCULOS</p>
-            <p>LISTAGEM DOS VEÍCULOS</p>
-            <p>LIMPEZA DE FORMULÁRIO</p>
-            <hr>
 
 
         </div>
@@ -38,14 +55,27 @@
                 <label for="placa">Placa</label>
                 <input type="text" name="placa" id="placa">
 
-                <label for="ano">Ano</label>
+                <label for="ano">Ano (ex-2010)</label>
                 <input type="text" name="ano" id="ano">
 
-                <label for="valor">Valor</label>
+                <label for="valor">Valor (sem pontos ou virgulas)</label>
                 <input type="text" name="valor" id="valor">
 
-                <label for="combustivel">Combustivel</label>
+                <label for="combustivel">Combustivel (somente os tipos listados a baixo)</label>
                 <input type="text" name="combustivel" id="combustivel">
+
+                
+                <hr>
+                <hr>
+                <h2>tipos De Combustíveis:</h2>
+                <li>Gasolina</li>
+                <li>Etanol</li>
+                <li>Bicombustível</li>
+                <li>Híbrido</li>
+                <li>Elétrico</li>
+                <hr>
+                <hr>
+
 
                 <button type="submit" id="btn-add">Adicionar</button>
                 <button type="reset" id="btn-limpar">Limpar</button>

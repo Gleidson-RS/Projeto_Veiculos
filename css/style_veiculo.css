@@ -6,6 +6,13 @@
     font-family: Verdana;
 }
 
+h2{
+    text-align:left;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: rgb(0, 0, 0);
+}
+
 h3{
     text-align: center;
     text-transform: uppercase;
