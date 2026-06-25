@@ -5,8 +5,10 @@ import {calculo} from "./script_calculo.js"
 
 
 //PEGANDO ELEMENTOS DO DOM
-const divLista = document.querySelector('#div-form-veiculo')
-const formveiculo = document.querySelector('#form-veiculo')
+const divVeiculo = document.querySelector('#div-form-veiculo')
+const formVeiculo = document.querySelector('#form-veiculo')
+const divLista = document.querySelector('#div-lista')
+const btnLimpar = document.querySelector('#btn-limpar')
 
 
 //CRIANDO O ARRAY veiculo
@@ -14,18 +16,18 @@ const veiculo = []
 
 
 //CAPTURAR O EVENTO submit DO FORMULÁRIO
-formveiculo.addEventListener('submit', (evt) => {
+formVeiculo.addEventListener('submit', (evt) => {
     evt.preventDefault()
 
-    const dadosFormveiculo = new FormData(formveiculo)
+    const dadosFormveiculo = new FormData(formVeiculo)
 
     const veiculo = {
-        nome: dadosFormveiculo.get('modelo'),
-        idade: dadosFormveiculo.get('marca'),
-        nome: dadosFormveiculo.get('placa'),
-        nome: dadosFormveiculo.get('ano'),
-        nome: dadosFormveiculo.get('valor'),
-        renda: dadosFormveiculo.get('combustivel')
+        modelo: dadosFormveiculo.get('modelo'),
+        marca: dadosFormveiculo.get('marca'),
+        placa: dadosFormveiculo.get('placa'),
+        ano: dadosFormveiculo.get('ano'),
+        valor: dadosFormveiculo.get('valor'),
+        combustivel: dadosFormveiculo.get('combustivel')
     }
 
     addveiculo(veiculo)
@@ -38,7 +40,7 @@ const addveiculo = (objveiculo) => {
 
     listveiculo()
 
-    formveiculo.reset()
+    formVeiculo.reset()
 }
 
 
@@ -48,7 +50,10 @@ const listveiculo = () => {
     divLista.innerHTML = ''
 
     veiculo.forEach((elem, i) => {
-        divLista.innerHTML += ` ${i + 1} - ${elem.nome} - ${elem.idade} <br>`
+        divLista.innerHTML += ` ${i + 1} - ${elem.modelo} - ${elem.marca} - ${elem.placa} ${elem.ano} ${elem.valor} ${elem.combustivel} <br>`
 
     })
 }
+btnLimpar.addEventListener('click', () => {
+    divLista.innerHTML = ''
+})
