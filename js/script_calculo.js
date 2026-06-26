@@ -1,31 +1,29 @@
-const CalculoValor = (objempresa) => {
-    return objempresa.quantidade * 220
-}
+//CRIANDO A FUNÇÃO PARA CALCULAR OS DESCONTOS
+const CalculoIPVA = (objveiculo) => {
 
-const CalValor_premi = (objempresa) => {
-
-    if (objempresa.quantidade < 1000) {
-
-        return 0
-
-    } else if (objempresa.quantidade < 10000) {
-
-        return objempresa.valorReceber * 0.08
-
-    } else if (objempresa.quantidade < 15000) {
-
-        return objempresa.valorReceber * 0.10
-
-    } else if (objempresa.quantidade < 25000) {
-
-        return objempresa.valorReceber * 0.15
-
-    } else {
-
-        return objempresa.valorReceber * 0.20
-
+    const idade = 2026 - Number(objveiculo.ano)
+    
+    let resultCalc = ''
+    
+    if(idade > 20 ){
+        resultCalc = "ISENTO"
+    
+    }else if(objveiculo.combustivel == 'Gasolina' ){
+        resultCalc = objveiculo.valor * 0.20
+    
+    }else if(objveiculo.combustivel == 'Etanol' ){
+        resultCalc = objveiculo.valor * 0.15
+    
+    }else if(objveiculo.combustivel == 'Bicombustível' ){
+    resultCalc = objveiculo.valor * 0.10
+    
+    }else if(objveiculo.combustivel == 'Híbrido' ){
+    resultCalc = objveiculo.valor * 0.08
+    
+    }else if(objveiculo.combustivel == 'Elétrico'){
+        resultCalc = objveiculo.valor * 0.02    
+    
     }
-
-}
-
-export { CalculoValor, CalValor_premi }
+    return resultCalc
+    }
+    export{CalculoIPVA}

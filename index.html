@@ -3,40 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Empresa</title>
+    <title>Projeto veiculo</title>
 
-    <script src="js/script_empresa.js" defer type="module"></script>
+    
+    <script src="js/script_veiculo.js" defer type="module"></script>
+    <link rel="stylesheet" href="css/style_veiculo.css">
+
 </head>
 <body>
+    <div id="geral">
 
-    <h2>Cadastro de Empresas</h2>
+        <h3>Cadastro De veiculo</h3>
+      
+        <hr>
+        <hr>
+        <h4>Requisitos Da Atividade</h4>
+        <p>CADASTRO DE VEÍCULOS</p>
+        <p>LISTAGEM DOS VEÍCULOS</p>
+        <p>LIMPEZA DE FORMULÁRIO</p>
+        <hr>
 
-    <div id="div-form-empresa">
+        <hr>
+        <h4>Regras</h4>
+        <p>O seguro será fixado em 10% do
+            valor do veículo para todos os casos, enquanto o IPVA será
+            calculado de acordo com o tipo de combustível: veículos a
+            gasolina pagam 20%, etanol 15%, bicombustíveis 10%, híbridos
+            8% e elétricos 2%.</p>
+        <p>Caso o veículo tenha mais de 20 anos de
+            fabricação, ele será considerado isento de IPVA, sendo
+            exibido esse status na listagem.
+        <hr>
+        <hr>
 
-        <form id="form-empresa">
 
-            <label for="descricao">Descrição da Empresa</label>
-            <input type="text" id="descricao" name="descricao" required>
+        <div id="div-codigo">
 
-            <br>
-            <br>
 
-            <label for="quantidade">Quantidade Recolhida</label>
-            <input type="number" id="quantidade" name="quantidade" required>
 
-            <br>
-            <br>
+        </div>
 
-            <button type="submit">Adicionar</button>
-            <button type="reset" id="btn-limpar">Limpar</button>
+        <div id="div-form-veiculo">
+            <form id="form-veiculo">
 
-        </form>
+                <label for="modelo">Modelo</label>
+                <input type="text" name="modelo" id="modelo">
 
-    </div>
+                <label for="marca">Marca</label>
+                <input type="text" name="marca" id="marca">
 
-    <hr>
+                <label for="placa">Placa</label>
+                <input type="text" name="placa" id="placa">
 
-    <div id="div-formulario"></div>
+                <label for="ano">Ano (ex-2010)</label>
+                <input type="text" name="ano" id="ano">
 
+                <label for="valor">Valor (sem pontos ou virgulas)</label>
+                <input type="text" name="valor" id="valor">
+
+                <label for="combustivel">Combustivel</label>
+                <select name="combustivel" id="combustivel">
+                    <option value="Gasolina">Gasolina</option>
+                    <option value="Etanol">Etanol</option>
+                    <option value="Bicombustível">Bicombustível</option>
+                    <option value="Híbrido">Híbrido</option>
+                    <option value="Elétrico">Elétrico</option>
+                </select>
+                
+                <br>
+                <br>
+
+                <button type="submit" id="btn-add">Adicionar</button>
+                <button type="reset" id="btn-limpar">Limpar</button>
+
+            </form>
+        </div>
+
+        <div id="div-lista">Lista</div>
+    
 </body>
 </html>
