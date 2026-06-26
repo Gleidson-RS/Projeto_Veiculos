@@ -23,7 +23,7 @@ formempresa.addEventListener('submit', (evt) => {
     const empresa = {
 
 
-        descricao: dadosFormempresa.get('descricao'),
+        descricao: dadosFormempresa.get('descriçao'),
         quantidade: Number(dadosFormempresa.get('quantidade'))
     }
     
@@ -52,11 +52,11 @@ const listempresa = () => {
 
     empresa.forEach((elem, i) => {
         formulario.innerHTML += 
-        `${i + 1} -
-         descriçao:${elem.descriçao} -
-         quantidade:${elem.quantidade} -
-         Valor_a_Recebera:${elem.Valor_a_Recebera} -
-         Valor_da_premiaçao:${elem.Valor_da_premiaçao} -
+        `
+         descriçao:${elem.descriçao} - <br>
+         quantidade:${elem.quantidade} - <br>
+         Valor_a_Recebera:${elem.Valor_a_Recebera} - <br>
+         Valor_da_premiaçao:${elem.Valor_da_premiaçao} - <br>
          Valor:${elem.valor_final} - <br>`
 
     })

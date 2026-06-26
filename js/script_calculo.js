@@ -8,16 +8,16 @@ if(objempresa.quantidade < 1000 ){
     ResultCalValor_premi = "Sem valor adicional"
 
 }else if(objempresa.quantidade >= 1000 && objempresa.quantidade < 10000 ){
-    ResultCalValor_premi = valorPremiacao * 0.08
+    ResultCalValor_premi = objempresa.valorReceber * 0.08 
 
 }else if(objempresa.quantidade >= 10000 && objempresa.quantidade < 15000 ){
-    ResultCalValor_premi = valorPremiacao * 0.10
+    ResultCalValor_premi = objempresa.valorReceber * 0.10
 
 }else if(objempresa.quantidade >= 15000 && objempresa.quantidade < 25000 ){
-    ResultCalValor_premi = valorPremiacao * 0.15
+    ResultCalValor_premi = objempresa.valorReceber * 0.15
 
 }else if( objempresa.quantidade > 25000 ){
-    ResultCalValor_premi = valorPremiacao * 0.20
+    ResultCalValor_premi = objempresa.valorReceber * 0.20
 
 
 }
@@ -30,9 +30,9 @@ const CalculoValor = (objempresa) => {
     
     for(let i = 0;i <= objempresa.quantidade; i++){
         const CalculoValor = (objempresa) => {
-            return objempresa.quantidade * 220;
+            return objempresa.quantidade * 220
         }
-
+ResultCalValor = objempresa.quantidade
 
 }
 return ResultCalValor
