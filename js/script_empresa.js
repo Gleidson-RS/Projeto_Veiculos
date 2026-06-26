@@ -21,19 +21,17 @@ formempresa.addEventListener('submit', (evt) => {
     const dadosFormempresa = new FormData(formempresa)
 
     const empresa = {
-        descrição: dadosFormempresa.get('descrição'),
-        quantidade: dadosFormempresa.get('quantidade'),
-        Valor_a_Recebera: dadosFormempresa.get('Valor_a_Recebera'),
-        Valor_da_premiaçã: dadosFormempresa.get('Valor_da_premiaçã'),
-        valor_final: dadosFormempresa.get('valor_final'),
-
-    }   
-empresa.Valor_a_Recebera = CalculoValor(empresa.valor)
-empresa.Valor_da_premiação = CalValor_premi(empresa)
-valor_final = Valor_a_Recebera + Valor_da_premiação
 
 
-    addempresa(empresa)
+        descricao: dadosFormempresa.get('descricao'),
+        quantidade: Number(dadosFormempresa.get('quantidade'))
+    }
+    
+    empresa.valorReceber = CalculoValor(empresa);
+    empresa.valorPremiacao = CalValor_premi(empresa);
+    empresa.valorFinal = empresa.valorReceber + empresa.valorPremiacao;
+    
+    addempresa(empresa);
 })
 
 
@@ -55,10 +53,10 @@ const listempresa = () => {
     empresa.forEach((elem, i) => {
         formulario.innerHTML += 
         `${i + 1} -
-         descrição:${elem.descrição} -
+         descriçao:${elem.descriçao} -
          quantidade:${elem.quantidade} -
          Valor_a_Recebera:${elem.Valor_a_Recebera} -
-         Valor_da_premiação:${elem.Valor_da_premiação} -
+         Valor_da_premiaçao:${elem.Valor_da_premiaçao} -
          Valor:${elem.valor_final} - <br>`
 
     })
