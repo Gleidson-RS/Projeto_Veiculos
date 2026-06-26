@@ -66,3 +66,13 @@ const listveiculo = () => {
 
     })
 }
+
+/*
+divinnerHTML
+Descrição da empresa;
+Quantidade Recolhida;
+Valor a Receber;
+Valor da Premiação ou o Texto abaixo da Meta;
+
+
+*/
