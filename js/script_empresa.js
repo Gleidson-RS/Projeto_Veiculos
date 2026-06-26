@@ -23,7 +23,7 @@ formempresa.addEventListener('submit', (evt) => {
     const empresa = {
 
 
-        descricao: dadosFormempresa.get('descriçao'),
+        descriçao: dadosFormempresa.get('descriçao'),
         quantidade: Number(dadosFormempresa.get('quantidade'))
     }
     
