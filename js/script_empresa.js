@@ -49,8 +49,8 @@ formulario.innerHTML = ""
 
 empresas.forEach((elem, i) => {
 
-formulario.innerHTML += `
-<strong>Empresa ${i + 1}</strong><br>
+formulario.innerHTML += `<br>
+---------Empresa ${i + 1}---------<br>
 Descrição: ${elem.descricao}<br>
 Quantidade: ${elem.quantidade}<br>
 Valor a Receber: R$ ${elem.valorReceber.toFixed(2)}<br>
