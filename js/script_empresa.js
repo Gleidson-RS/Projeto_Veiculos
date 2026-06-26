@@ -54,7 +54,7 @@ formulario.innerHTML += `<br>
 Descrição: ${elem.descricao}<br>
 Quantidade: ${elem.quantidade}<br>
 Valor a Receber: R$ ${elem.valorReceber.toFixed(2)}<br>
-Valor da Premiação: R$ ${elem.valorPremiacao.toFixed(2)}<br>
+Valor da Premiação: R$ ${elem.valorPremiacao}<br>
 Valor Final: R$ ${elem.valorFinal.toFixed(2)}
 `
 
