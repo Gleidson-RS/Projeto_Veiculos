@@ -1,6 +1,6 @@
 //IMPORTANDO ARQUIVOS
-import {Calculo} from "./script_calculo.js"
-
+import {CalculoValor} from "./script_calculo.js"
+import {CalValor_premi} from "./script_calculo.js"
 
 
 
@@ -13,9 +13,6 @@ const btnLimpar = document.querySelector('#btn-limpar')
 
 //CRIANDO O ARRAY empresa
 const empresa = []
-const Valor_a_Recebera = ''
-const Valor_da_premiação = ''
-let valor_final = ''
 
 //CAPTURAR O EVENTO submit DO FORMULÁRIO
 formempresa.addEventListener('submit', (evt) => {
@@ -26,18 +23,13 @@ formempresa.addEventListener('submit', (evt) => {
     const empresa = {
         descrição: dadosFormempresa.get('descrição'),
         quantidade: dadosFormempresa.get('quantidade'),
-
-
-        valor: Number(
-            dadosFormempresa
-                .get('valor')
-                .replaceAll('.', '')
-                .replace(',', '.')
-        )
+        Valor_a_Recebera: dadosFormempresa.get('Valor_a_Recebera'),
+        Valor_da_premiaçã: dadosFormempresa.get('Valor_da_premiaçã'),
+        valor_final: dadosFormempresa.get('valor_final'),
 
     }   
-empresa.Valor_a_Recebera = Calculo(empresa)
-empresa.Valor_da_premiação = Number(empresa.valor)
+empresa.Valor_a_Recebera = CalculoValor(empresa.valor)
+empresa.Valor_da_premiação = CalValor_premi(empresa)
 valor_final = Valor_a_Recebera + Valor_da_premiação
 
 
@@ -63,21 +55,11 @@ const listempresa = () => {
     empresa.forEach((elem, i) => {
         formulario.innerHTML += 
         `${i + 1} -
-        descrição:${elem.descrição} -
-        quantidade:${elem.quantidade} -
-         Placa:${elem.Valor_a_Recebera} -
-         Ano:${elem.Valor_da_premiação} -
+         descrição:${elem.descrição} -
+         quantidade:${elem.quantidade} -
+         Valor_a_Recebera:${elem.Valor_a_Recebera} -
+         Valor_da_premiação:${elem.Valor_da_premiação} -
          Valor:${elem.valor_final} - <br>`
 
     })
 }
-
-/*
-divinnerHTML
-Descrição da empresa;
-Quantidade Recolhida;
-Valor a Receber;
-Valor da Premiação ou o Texto abaixo da Meta;
-
-
-*/

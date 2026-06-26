@@ -1,47 +1,48 @@
 //CRIANDO A FUNÇÃO PARA CALCULAR OS DESCONTOS
-const CalValor_premi = (objveiculo) => {
+
+const CalValor_premi = (objempresa) => {
 
 let ResultCalValor_premi = ''
 
-if(quantidade < 1000 ){
+if(objempresa.quantidade < 1000 ){
     ResultCalValor_premi = "Sem valor adicional"
 
-}else if(quantidade >= 1000 && quantidade < 10000 ){
-    ResultCalValor_premi = objveiculo.valor * 0.08
+}else if(objempresa.quantidade >= 1000 && objempresa.quantidade < 10000 ){
+    ResultCalValor_premi = objempresa.valor * 0.08
 
-}else if(quantidade >= 1000 && quantidade < 15000 ){
-    ResultCalValor_premi = objveiculo.valor * 0.10
+}else if(objempresa.quantidade >= 1000 && objempresa.quantidade < 15000 ){
+    ResultCalValor_premi = objempresa.valor * 0.10
 
-}else if(quantidade >= 1000 && quantidade < 25000 ){
-    ResultCalValor_premi = objveiculo.valor * 0.15
+}else if(objempresa.quantidade >= 1000 && objempresa.quantidade < 25000 ){
+    ResultCalValor_premi = objempresa.valor * 0.15
 
-}else if( quantidade < 25000 ){
-    ResultCalValor_premi = objveiculo.valor * 0.20
+}else if( objempresa.quantidade < 25000 ){
+    ResultCalValor_premi = objempresa.valor * 0.20
 
 
 }
 return ResultCalValor_premi
 }
 
-const CalculoValor = (objveiculo) => {
+const CalculoValor = (objempresa) => {
 
     let ResultCalValor = ''
     
-    for(i = quantidade;i < quantidade; i++){
+    for(let i = objempresa.quantidade;i < objempresa.quantidade; i++){
         if(i * 220){
-            console.log(i)
-            divfor.innerHTML +=  `${i} <br>`
+         ResultCalValor = i
         }
-        }
+
+
+}
+return ResultCalValor
+}
     
-    
-    }
-    return ResultCalValor
     
     
 
 
 
-
-export{Calculo}
+export{CalValor_premi}
+export{CalculoValor}
 
