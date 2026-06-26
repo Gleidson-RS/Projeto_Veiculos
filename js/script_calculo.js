@@ -1,30 +1,47 @@
 //CRIANDO A FUNÇÃO PARA CALCULAR OS DESCONTOS
-const CalculoIPVA = (objveiculo) => {
+const CalValor_premi = (objveiculo) => {
 
-const idade = 2026 - Number(objveiculo.ano)
+let ResultCalValor_premi = ''
 
-let resultCalc = ''
+if(quantidade < 1000 ){
+    ResultCalValor_premi = "Sem valor adicional"
 
-if(idade > 20 ){
-    resultCalc = "ISENTO"
+}else if(quantidade >= 1000 && quantidade < 10000 ){
+    ResultCalValor_premi = objveiculo.valor * 0.08
 
-}else if(objveiculo.combustivel == 'Gasolina' ){
-    resultCalc = objveiculo.valor * 0.20
+}else if(quantidade >= 1000 && quantidade < 15000 ){
+    ResultCalValor_premi = objveiculo.valor * 0.10
 
-}else if(objveiculo.combustivel == 'Etanol' ){
-    resultCalc = objveiculo.valor * 0.15
+}else if(quantidade >= 1000 && quantidade < 25000 ){
+    ResultCalValor_premi = objveiculo.valor * 0.15
 
-}else if(objveiculo.combustivel == 'Bicombustível' ){
-resultCalc = objveiculo.valor * 0.10
+}else if( quantidade < 25000 ){
+    ResultCalValor_premi = objveiculo.valor * 0.20
 
-}else if(objveiculo.combustivel == 'Híbrido' ){
-resultCalc = objveiculo.valor * 0.08
-
-}else if(objveiculo.combustivel == 'Elétrico'){
-    resultCalc = objveiculo.valor * 0.02    
 
 }
-return resultCalc
+return ResultCalValor_premi
 }
-export{CalculoIPVA}
+
+const CalculoValor = (objveiculo) => {
+
+    let ResultCalValor = ''
+    
+    for(i = quantidade;i < quantidade; i++){
+        if(i * 220){
+            console.log(i)
+            divfor.innerHTML +=  `${i} <br>`
+        }
+        }
+    
+    
+    }
+    return ResultCalValor
+    
+    
+
+
+
+
+export{Calculo}
 

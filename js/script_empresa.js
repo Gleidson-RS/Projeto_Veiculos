@@ -1,68 +1,73 @@
 //IMPORTANDO ARQUIVOS
-import {CalculoIPVA} from "./script_calculo.js"
+import {Calculo} from "./script_calculo.js"
 
 
 
 
 //PEGANDO ELEMENTOS DO DOM
-const divVeiculo = document.querySelector('#div-form-veiculo')
-const formVeiculo = document.querySelector('#form-veiculo')
-const divLista = document.querySelector('#div-lista')
+const divempresa = document.querySelector('#div-form-empresa')
+const formempresa = document.querySelector('#form-empresa')
+const formulario = document.querySelector('#div-formulario')
 const btnLimpar = document.querySelector('#btn-limpar')
 
 
-//CRIANDO O ARRAY veiculo
-const veiculo = []
-const ipva = ''
-const seguro = ''
+//CRIANDO O ARRAY empresa
+const empresa = []
+const Valor_a_Recebera = ''
+const Valor_da_premiação = ''
+let valor_final = ''
 
 //CAPTURAR O EVENTO submit DO FORMULÁRIO
-formVeiculo.addEventListener('submit', (evt) => {
+formempresa.addEventListener('submit', (evt) => {
     evt.preventDefault()
 
-    const dadosFormveiculo = new FormData(formVeiculo)
+    const dadosFormempresa = new FormData(formempresa)
 
-    const veiculo = {
-        modelo: dadosFormveiculo.get('modelo'),
-        marca: dadosFormveiculo.get('marca'),
-        placa: dadosFormveiculo.get('placa'),
-        ano: dadosFormveiculo.get('ano'),
-        valor: dadosFormveiculo.get('valor'),
-        combustivel: dadosFormveiculo.get('combustivel'),
+    const empresa = {
+        descrição: dadosFormempresa.get('descrição'),
+        quantidade: dadosFormempresa.get('quantidade'),
+
 
         valor: Number(
-            dadosFormveiculo
+            dadosFormempresa
                 .get('valor')
                 .replaceAll('.', '')
                 .replace(',', '.')
         )
 
     }   
-veiculo.ipva = CalculoIPVA(veiculo)
-veiculo.seguro = Number(veiculo.valor) * 0.10
+empresa.Valor_a_Recebera = Calculo(empresa)
+empresa.Valor_da_premiação = Number(empresa.valor)
+valor_final = Valor_a_Recebera + Valor_da_premiação
 
 
-    addveiculo(veiculo)
+    addempresa(empresa)
 })
 
 
-//FUNÇÃO ADICIONAR veiculo
-const addveiculo = (objveiculo) => {
-    veiculo.push(objveiculo)
+//FUNÇÃO ADICIONAR empresa
+const addempresa = (objempresa) => {
+    empresa.push(objempresa)
 
-    listveiculo()
+    listempresa()
 
-    formVeiculo.reset()
+    formempresa.reset()
 }
 
 
-//FUNÇÃO LISTAR veiculo
-const listveiculo = () => {
+//FUNÇÃO LISTAR empresa
+const listempresa = () => {
     // Limpa a lista antes de recriar
-    divLista.innerHTML = ''
+    formulario.innerHTML = ''
 
-    veiculo.forEach((elem, i) => {
-        divLista.innerHTML += `${i + 1} - Modelo:${elem.modelo} - Marca:${elem.marca} - Placa:${elem.placa} - Ano:${elem.ano} - Valor:${elem.valor} - Combustivel:${elem.combustivel} - Seguro:${elem.seguro} - IPVA:${elem.ipva} <br>`
+    empresa.forEach((elem, i) => {
+        formulario.innerHTML += 
+        `${i + 1} -
+        descrição:${elem.descrição} -
+        quantidade:${elem.quantidade} -
+         Placa:${elem.Valor_a_Recebera} -
+         Ano:${elem.Valor_da_premiação} -
+         Valor:${elem.valor_final} - <br>`
 
     })
 }
